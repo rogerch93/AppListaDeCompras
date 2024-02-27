@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppListaDeCompras.Views.FirstPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels"
+    Title="FirstPage">
+    <ContentPage.BindingContext>
+        <vm:FirstPageViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Padding="30">
+            <Image
+                HeightRequest="{OnPlatform Default=330,
+                                           Android=290}"
+                SemanticProperties.Description="Carrinho Virtual"
+                Source="i_cart.svg" />
+            <Label
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Seja bem vindo ao &#10;Aplicativo lista de compras "
+                VerticalOptions="CenterAndExpand" />
+            <Label
+                SemanticProperties.HeadingLevel="Level2"
+                Style="{StaticResource SubHeadline}"
+                Text="Faça suas compras de forma organizada e colaborativa"
+                VerticalOptions="CenterAndExpand" />
+            <Button
+                Command="{Binding NavigateToAppShellCommand}"
+                SemanticProperties.Description="Acessa tela do app, cadastro de lista de compras"
+                SemanticProperties.Hint="Acesso"
+                Text="Acessar"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
